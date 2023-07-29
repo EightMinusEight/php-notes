@@ -73,3 +73,40 @@ https://planetscale.com/learn/courses/mysql-for-developers/introduction/course-i
 https://laravel.com/docs/10.x/precognition#using-alpine
 
 
+
+### 5 Tips and Tricks for working with the Laravel HTTP Client
+
+https://laravel-news.com/laravel-http-client-tips
+
+
+
+
+[Reducing code duplication  Laravel News](https://laravel-news.com/leaning-on-artisan)
+
+[CRUD Operations Using Laravel Livewire  Laravel News](https://laravel-news.com/crud-operations-using-laravel-livewire)
+
+
+[Setting up your Data Model in Laravel  Laravel News](https://laravel-news.com/data-model)
+
+[Working with Laravel Model Events  Laravel News](https://laravel-news.com/working-with-laravel-model-events)
+
+
+
+
+
+
+
+### Reaching for Facades
+
+https://laravel-news.com/facades
+
+
+
+
+
+
+
+
+
+
+
