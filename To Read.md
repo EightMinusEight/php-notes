@@ -96,6 +96,12 @@ https://masteringphpstorm.com/tips-and-tricks
 
 
 
+### How to Delay Laravel Jobs and Listeners with Transactions
+
+https://arunas.dev/how-to-delay-laravel-jobs-and-listeners-within-database-transactions/
+
+
+
 
 
 ### Reaching for Facades
