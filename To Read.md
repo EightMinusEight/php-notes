@@ -70,4 +70,6 @@ https://planetscale.com/learn/courses/mysql-for-developers/introduction/course-i
 
 
 
+https://laravel.com/docs/10.x/precognition#using-alpine
+
 
