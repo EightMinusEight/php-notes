@@ -65,7 +65,7 @@ https://docs.saloon.dev/the-basics/connectors
 
 https://laravel-news.com/mysql-for-developers-course
 
-
+https://planetscale.com/learn/courses/mysql-for-developers/introduction/course-introduction
 
 
 
