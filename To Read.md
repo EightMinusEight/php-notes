@@ -61,6 +61,13 @@ https://docs.saloon.dev/the-basics/connectors
 
 
 
+### MySQL for Developers
+
+https://laravel-news.com/mysql-for-developers-course
+
+
+
+
 
 
 
