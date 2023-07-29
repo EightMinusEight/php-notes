@@ -11,3 +11,10 @@ Finding the right IDE that fits your coding workflow and requirements can often 
 In this series, I hope you'll come along as I demonstrate, one episode at a time, my complete Laravel and PhpStorm workflow (including the incredible Laravel Idea plugin). So buckle up, there's a lot to cover!
 
 https://laracasts.com/series/phpstorm-for-laravel-developers
+
+
+### PHP JSON Parser - Read large JSON from any source in a memory-efficient way
+
+[JSON Parser](https://github.com/cerbero90/json-parser) is a zero-dependencies pull parser to read large JSON from any source in a memory-efficient way. You can read JSON from any source, such as a string, URL, etc., and iterate through it like so:
+
+https://github.com/cerbero90/json-parser
