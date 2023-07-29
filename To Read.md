@@ -51,6 +51,11 @@ https://laravel-news.com/diving-into-cross-origin-resource-sharing
 
 
 
+### Working with third party services in laravel
+
+https://laravel-news.com/working-with-third-party-services-in-laravel
+
+https://docs.saloon.dev/the-basics/connectors
 
 
 
