@@ -26,7 +26,9 @@ https://github.com/cerbero90/json-parser
 https://laravel-news.com/structuring-laravel-apps
 
 
+### MySQL for Developers course is live! 
 
+https://laravel-news.com/mysql-for-developers-course
 
 
 ### Writing and debugging Eloquent queries with Tinkerwell
