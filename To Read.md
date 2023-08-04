@@ -94,6 +94,11 @@ https://laravel-news.com/laravel-http-client-tips
 
 https://masteringphpstorm.com/tips-and-tricks
 
+https://laravel-news.com/nativephp-tutorial
+
+
+https://laravel-news.com/phpsandbox
+
 
 
 ### How to Delay Laravel Jobs and Listeners with Transactions
@@ -109,6 +114,12 @@ https://arunas.dev/how-to-delay-laravel-jobs-and-listeners-within-database-trans
 https://laravel-news.com/facades
 
 
+
+
+
+### Livewire 3
+
+https://laravel-news.com/livewire-v3-beta
 
 
 
