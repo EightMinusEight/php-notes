@@ -109,9 +109,13 @@ https://arunas.dev/how-to-delay-laravel-jobs-and-listeners-within-database-trans
 
 
 
-### Reaching for Facades
+###  Facades
 
 https://laravel-news.com/facades
+
+https://ahmedash.dev/blog/laravel-core-bits/real-time-facades/
+
+https://ahmedash.dev/blog/laravel-core-bits/facade-deep-dive/
 
 
 
@@ -120,6 +124,14 @@ https://laravel-news.com/facades
 ### Livewire 3
 
 https://laravel-news.com/livewire-v3-beta
+
+
+
+
+### Batches
+
+
+https://ahmedash.dev/blog/laravel-core-bits/batching-jobs-in-laravel/
 
 
 
