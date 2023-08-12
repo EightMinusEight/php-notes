@@ -9,6 +9,8 @@
 
 ## Eloquent
 
+
+
 #### Latest of Many
 
 
@@ -29,3 +31,17 @@ public function latestOrder()
 }
 ```
 
+
+#### Cascading Deletion of Children -  Deleting Manually with DB Transactions
+
+hasMany relationship in Laravel and want to delete children records when the parent is deleted, there are a few ways to set that up.
+````
+public function destroy(Project $project) {
+    DB::transaction(function () {
+        $project->tasks()->delete();
+        $project->delete();
+    });
+}
+```
+
+Database Transaction is important because it would rollback any deleted task if something goes wrong with the following deleting of other tasks or parent project object. So, it's "delete all or nothing".
