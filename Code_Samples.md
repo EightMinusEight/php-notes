@@ -10,6 +10,11 @@
 ## Eloquent
 
 
+Models should contain only Laravel native things (relations, scopes...) and database-related code.
+Huge business logic should be written into Support or Action classes.
+Use mass assignment where possible.
+
+
 
 #### Latest of Many
 
