@@ -15,6 +15,21 @@ Huge business logic should be written into Support or Action classes.
 Use mass assignment where possible.
 
 
+#### Default model
+
+You can assign a default model in `belongsTo` relationship, to avoid fatal errors when calling it like `{{ $post->user->name }}` if $post->user doesn't exist.
+
+```php
+public function user()
+{
+    return $this->belongsTo(User::class)->withDefault();
+}
+```
+
+
+
+
+
 
 #### Latest of Many
 
