@@ -34,14 +34,14 @@ public function user()
 #### Latest of Many
 
 
-```
+```php
 public function latest_transaction() 
 {
     return $this->hasOne(Transaction::class)->latest();
 } 
 ```
 or
-```
+```php
 /**
  * Get the user's most recent order.
  */
@@ -55,7 +55,7 @@ public function latestOrder()
 #### Cascading Deletion of Children -  Deleting Manually with DB Transactions
 
 hasMany relationship in Laravel and want to delete children records when the parent is deleted, there are a few ways to set that up.
-````
+```php
 public function destroy(Project $project) {
     DB::transaction(function () {
         $project->tasks()->delete();
