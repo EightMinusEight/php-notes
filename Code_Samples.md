@@ -2,6 +2,48 @@
 
 
 
+# Architecture
+
+
+
+
+### Business logic should be in service class
+
+A controller must have only one responsibility, so move business logic from controllers to service classes.
+
+```php
+Bad:
+
+    public function store(Request $request)
+    {
+        if ($request->hasFile('image')) {
+            $request->file('image')->move(public_path('images') . 'temp');
+        }
+        
+        ...
+    }
+
+Good:
+
+    public function store(Request $request)
+    {
+        $this->articleService->handleUploadedImage($request->file('image'));
+    
+        ...
+    }
+    
+    class ArticleService
+    {
+        public function handleUploadedImage($image): void
+        {
+            if (!is_null($image)) {
+                $image->move(public_path('images') . 'temp');
+            }
+        }
+    }
+```
+
+
 
 # DB Models and Eloquent
 
