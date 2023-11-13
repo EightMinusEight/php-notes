@@ -93,3 +93,44 @@ public function publishedLessons(): HasMany
      return $this->lessons()->published();
 }
 ```
+
+
+
+# Automatic Column Value When Creating Records
+
+If you want to generate some DB column value when creating record, add it to model's `boot()` method.
+For example, if you have a field "position" and want to assign the next available position to the new record (like `Country::max('position') + 1)`, do this:
+
+```php
+    class Country extends Model {
+    
+        protected static function boot()
+    
+        {
+    
+            parent::boot();
+    
+     
+    
+            Country::creating(function($model) {
+    
+                $model->position = Country::max('position') + 1;
+    
+            });
+    
+        }
+    
+    }
+```
+
+
+
+
+
+
+
+
+
+
+
+
