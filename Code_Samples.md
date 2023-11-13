@@ -139,6 +139,19 @@ You can group Eloquent results by any custom condition, here's how to group by f
 
 
 
+# Sub-selects in Laravel Way
+
+From Laravel 6, you can use addSelect() in Eloquent statement, and do some calculation to that added column.
+
+    return Destination::addSelect(['last_flight' => Flight::select('name')
+    
+        ->whereColumn('destination_id', 'destinations.id')
+    
+        ->orderBy('arrived_at', 'desc')
+    
+        ->limit(1)
+    
+    ])->get();
 
 
 
