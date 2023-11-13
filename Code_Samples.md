@@ -129,20 +129,20 @@ For example, if you have a field "position" and want to assign the next availabl
 # Grouping by First Letter
 
 You can group Eloquent results by any custom condition, here's how to group by first letter of user's name:
-
+```php
     $users = User::all()->groupBy(function($item) {
     
         return $item->name[0];
     
     });
-
+```
 
 
 
 # Sub-selects in Laravel Way
 
 From Laravel 6, you can use addSelect() in Eloquent statement, and do some calculation to that added column.
-
+```php
     return Destination::addSelect(['last_flight' => Flight::select('name')
     
         ->whereColumn('destination_id', 'destinations.id')
@@ -152,7 +152,7 @@ From Laravel 6, you can use addSelect() in Eloquent statement, and do some calcu
         ->limit(1)
     
     ])->get();
-
+```
 
 
 
