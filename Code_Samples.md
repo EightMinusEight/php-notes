@@ -240,7 +240,7 @@ Ordering by an Eloquent Accessor! Yes, that's doable. Instead of ordering by the
 
 
 
-# Laravel Scout with database driver
+## Laravel Scout with database driver
 
 With laravel v9 you can use Laravel Scout (Search) with database driver. No more where likes!
 
@@ -250,7 +250,7 @@ With laravel v9 you can use Laravel Scout (Search) with database driver. No more
 
 
 
-# Make use of the value method on the query builder
+## Make use of the value method on the query builder
 
 Make use of the `value` method on the query builder to execute a more efficient query when you only need to retrieve a single column.
 
@@ -263,7 +263,7 @@ Make use of the `value` method on the query builder to execute a more efficient 
 ```
 
 
-# Return the primary keys from models collection
+## Return the primary keys from models collection
 
 Did you know `modelsKeys()` eloquent collection method? It returns the primary keys from models collection.
 
@@ -273,8 +273,17 @@ Did you know `modelsKeys()` eloquent collection method? It returns the primary k
     $users->modelsKeys(); // [1, 2, 3]
 ```
 
+----
 
-# JSON Where Clauses
+
+
+# Model Relations
+
+
+
+
+
+## JSON Where Clauses
 
 Laravel offers helpers to query JSON columns for databases that support them.
 
@@ -299,15 +308,13 @@ Laravel offers helpers to query JSON columns for databases that support them.
 
 
 
-# Get the newest (or oldest) item of another relation
+## Get the newest (or oldest) item of another relation
 
 Since Laravel 8.42, in an Eloquent model, you can define a relation that will get the newest (or oldest) item of another relation.
 
 ```php
     /**
-    
      * Get the user's latest order.
-    
      */
     public function latestOrder()
     {
@@ -315,9 +322,7 @@ Since Laravel 8.42, in an Eloquent model, you can define a relation that will ge
     }
     
     /**
-    
      * Get the user's oldest order.
-    
      */
     public function oldestOrder()
     {
@@ -326,7 +331,7 @@ Since Laravel 8.42, in an Eloquent model, you can define a relation that will ge
 ```
 
 
-# Raw DB Queries: havingRaw()
+## Raw DB Queries: havingRaw()
 
 You can use RAW DB queries in various places, including `havingRaw()` function after `groupBy()`.
 
@@ -336,7 +341,7 @@ You can use RAW DB queries in various places, including `havingRaw()` function a
 
 
 
-# Default model
+## Default model
 
 You can assign a default model in `belongsTo` relationship, to avoid fatal errors when calling it like `{{ $post->user->name }}` if $post-\>user doesn't exist.
 
@@ -348,7 +353,7 @@ You can assign a default model in `belongsTo` relationship, to avoid fatal error
 ```
 
 
-# Extra Filter Query on Relationships
+## Extra Filter Query on Relationships
 
 If you want to load relationship data, you can specify some limitations or ordering in a closure function. For example, if you want to get Countries with only three of their biggest cities, here's the code.
 
@@ -360,7 +365,7 @@ If you want to load relationship data, you can specify some limitations or order
 
 
 
-# Load Relationships Always, but Dynamically
+## Load Relationships Always, but Dynamically
 
 You can not only specify what relationships to ALWAYS load with the model, but you can do it dynamically, in the constructor method:
 
@@ -381,7 +386,7 @@ You can not only specify what relationships to ALWAYS load with the model, but y
 ```
 
 
-# Filter hasMany relationships
+## Filter hasMany relationships
 
 Just a code example from my project, showing the possibility of filtering hasMany relationships.
 
@@ -398,7 +403,7 @@ And you wanna query all the types, with their tags, but only those that have exa
 ```
 
 
-# Filter by many-to-many relationship pivot column
+## Filter by many-to-many relationship pivot column
 
 If you have a many-to-many relationship, and you add an extra column to the pivot table, here's how you can order by it when querying the list.
 
@@ -422,7 +427,7 @@ If you have a many-to-many relationship, and you add an extra column to the pivo
 ```
 
 
-# You can add conditions to your relationships
+## You can add conditions to your relationships
 
 ```php
     class User
@@ -447,7 +452,7 @@ If you have a many-to-many relationship, and you add an extra column to the pivo
 ```
 
 
-# \`whereHas()\` multiple connections
+## \`whereHas()\` multiple connections
 
 ```php
     // User Model
