@@ -488,7 +488,7 @@ If you have a many-to-many relationship, and you add an extra column to the pivo
 
 # Blade and Views
 
-# $loop variable in foreach
+### $loop variable in foreach
 
 Inside of foreach loop, check if current entry is first/last by just using `$loop` variable.
 
@@ -509,7 +509,7 @@ Inside of foreach loop, check if current entry is first/last by just using `$loo
 There are also other properties like `$loop->iteration` or `$loop->count`.
 
 
-# Cleanup loops
+### Cleanup loops
 
 Did you know the Blade `@each` directive can help cleanup loops in your templates?
 
@@ -527,7 +527,7 @@ Did you know the Blade `@each` directive can help cleanup loops in your template
 ```
 
 
-# Checked blade directive
+### Checked blade directive
 
 In Laravel 9, you'll be able to use the cool new "checked" Blade directive.
 
@@ -545,7 +545,7 @@ This is going to be a nice addition that we can use to clean up our Blade views 
     <input type="radio" name="active" value="0" @checked(!old('active', $user->active))/>
 ```
 
-# Selected blade directive
+### Selected blade directive
 
 In Laravel 9, you'll be able to use the cool new "selected" Blade directive for HTML select elements.
 
@@ -566,7 +566,7 @@ This is going to be a nice addition that we can use to clean up our Blade views 
 ```
 
 
-# Calculate Sum with Pagination
+### Calculate Sum with Pagination
 
 How to calculate the sum of all records when you have only the PAGINATED collection? Do the calculation BEFORE the pagination, but from the same query.
 
