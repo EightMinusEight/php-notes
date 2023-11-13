@@ -126,6 +126,15 @@ For example, if you have a field "position" and want to assign the next availabl
 
 
 
+# Grouping by First Letter
+
+You can group Eloquent results by any custom condition, here's how to group by first letter of user's name:
+
+    $users = User::all()->groupBy(function($item) {
+    
+        return $item->name[0];
+    
+    });
 
 
 
