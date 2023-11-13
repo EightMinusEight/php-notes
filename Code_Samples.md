@@ -97,7 +97,7 @@ public function publishedLessons(): HasMany
 
 
 
-# Automatic Column Value When Creating Records
+### Automatic Column Value When Creating Records
 
 If you want to generate some DB column value when creating record, add it to model's `boot()` method.
 For example, if you have a field "position" and want to assign the next available position to the new record (like `Country::max('position') + 1)`, do this:
@@ -118,7 +118,7 @@ For example, if you have a field "position" and want to assign the next availabl
 
 
 
-# Grouping by First Letter
+### Grouping by First Letter
 
 You can group Eloquent results by any custom condition, here's how to group by first letter of user's name:
 
@@ -130,7 +130,7 @@ You can group Eloquent results by any custom condition, here's how to group by f
 
 
 
-# Sub-selects in Laravel Way
+### Sub-selects in Laravel Way
 
 From Laravel 6, you can use addSelect() in Eloquent statement, and do some calculation to that added column.
 
@@ -144,7 +144,7 @@ From Laravel 6, you can use addSelect() in Eloquent statement, and do some calcu
 
 
 
-# Use DB Transactions
+### Use DB Transactions
 
 If you have two DB operations performed, and second may get an error, then you should rollback the first one, right?
 
@@ -163,7 +163,7 @@ For that, I suggest to use DB Transactions, it's really easy in Laravel:
 
 
 
-# Reduce Memory
+### Reduce Memory
 
 Sometimes we need to load a huge amount of data into memory. For example:
 
@@ -181,7 +181,7 @@ Keep in mind it is often a good idea to pass an array of fields to the get metho
 
 
 
-# Order JSON column attribute
+### Order JSON column attribute
 
 With Eloquent you can order results by a JSON column attribute
 
@@ -195,7 +195,7 @@ With Eloquent you can order results by a JSON column attribute
 ```
 
 
-# Directly convert created\_at date to human readable format
+### Directly convert created\_at date to human readable format
 
 Did you know you can directly convert created\_at date to human readable format like 1 minute ago, 1 month ago using diffForHumans() function. Laravel eloquent by default enables Carbon instance on created\_at field.
 
@@ -209,7 +209,7 @@ Did you know you can directly convert created\_at date to human readable format 
 
 
 
-# Ordering by an Eloquent Accessor
+### Ordering by an Eloquent Accessor
 
 Ordering by an Eloquent Accessor! Yes, that's doable. Instead of ordering by the accessor on the DB level, we order by the accessor on the returned Collection.
 
@@ -240,7 +240,7 @@ Ordering by an Eloquent Accessor! Yes, that's doable. Instead of ordering by the
 
 
 
-## Laravel Scout with database driver
+### Laravel Scout with database driver
 
 With laravel v9 you can use Laravel Scout (Search) with database driver. No more where likes!
 
@@ -250,7 +250,7 @@ With laravel v9 you can use Laravel Scout (Search) with database driver. No more
 
 
 
-## Make use of the value method on the query builder
+### Make use of the value method on the query builder
 
 Make use of the `value` method on the query builder to execute a more efficient query when you only need to retrieve a single column.
 
@@ -263,7 +263,7 @@ Make use of the `value` method on the query builder to execute a more efficient 
 ```
 
 
-## Return the primary keys from models collection
+### Return the primary keys from models collection
 
 Did you know `modelsKeys()` eloquent collection method? It returns the primary keys from models collection.
 
