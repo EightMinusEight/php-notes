@@ -810,3 +810,55 @@ For this purpose, we can use `failed()` method in the job class, just like the `
          } 
     }
 ```
+
+
+# Log and Debug
+
+
+
+
+
+### Benchmark class
+
+In Laravel 9.32 we have a Benchmark class that can measure the time of any task.
+
+It's a pretty useful helper:
+
+```php
+    class OrderController
+    {
+         public function index()
+         {
+              return Benchmark::measure(fn () => Order::all()),
+         } 
+    }
+```
+
+
+## Log Long Running Laravel Queries
+
+```php
+    DB::enableQueryLog();
+     
+    DB::whenQueryingForLongerThen(1000, function ($connection) {
+         Log::warning(
+              'Long running queries have been detected.',
+              $connection->getQueryLog()
+         ); 
+    });
+```
+
+## Log all the database queries during development
+
+If you want to log all the database queries during development add this snippet to your AppServiceProvider
+
+```php
+    public function boot()
+    {
+        if (App::environment('local')) {
+            DB::listen(function ($query) {
+                logger(Str::replaceArray('?', $query->bindings, $query->sql));
+            });
+        } 
+    }
+```
