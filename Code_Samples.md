@@ -65,3 +65,31 @@ public function destroy(Project $project) {
 ```
 
 Database Transaction is important because it would rollback any deleted task if something goes wrong with the following deleting of other tasks or parent project object. So, it's "delete all or nothing".
+
+
+
+
+### Eloquent scopes inside of other relationships
+
+Did you know that you can use Eloquent scopes inside of defining other relationships?
+
+```php
+app/Models/Lesson.php:
+
+public function scopePublished($query)
+{
+     return $query->where('is_published', true);
+}
+
+app/Models/Course.php:
+
+public function lessons(): HasMany
+{
+     return $this->hasMany(Lesson::class);
+}
+ 
+public function publishedLessons(): HasMany
+{
+     return $this->lessons()->published();
+}
+```
