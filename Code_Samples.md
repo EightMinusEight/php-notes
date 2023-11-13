@@ -637,7 +637,46 @@ You can use the `when()` or `unless()` methods in your MailMessage notifications
 
 
 
+
+
+
+
+
+
+
+
 # Other
+
+
+
+## Use Model Events or Observers to Recaalculate Stuff
+
+```php
+// Recalculate invoice when the invoice item is saved.
+public function saved(InvoiceItem $invoiceItem): void
+{
+  $invoiceItem->invoice()->recalculate();
+}
+ 
+// Set default state when the order is created.
+public function creating(Order $order): void
+{
+  $order->state = OrderState::NEW;
+}
+ 
+// Delete relations before the model is deleted.
+public function deleting(Order $order): void
+{
+  $order->products()->delete();
+}
+```
+
+
+
+
+
+
+
 
 
 ## Schedule Laravel job based on time zone
@@ -810,6 +849,16 @@ For this purpose, we can use `failed()` method in the job class, just like the `
          } 
     }
 ```
+
+
+
+
+
+
+
+
+
+
 
 
 # Log and Debug
