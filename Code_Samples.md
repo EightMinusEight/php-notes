@@ -360,3 +360,127 @@ If you want to load relationship data, you can specify some limitations or order
 
 
 
+# Load Relationships Always, but Dynamically
+
+You can not only specify what relationships to ALWAYS load with the model, but you can do it dynamically, in the constructor method:
+
+```php
+    class ProductTag extends Model
+    {
+        protected $with = ['product'];
+     
+        public function __construct() {
+            parent::__construct();
+            $this->with = ['product'];
+     
+            if (auth()->check()) {
+                $this->with[] = 'user';
+            }
+        }
+    }
+```
+
+
+# Filter hasMany relationships
+
+Just a code example from my project, showing the possibility of filtering hasMany relationships.
+
+    TagTypes -\> hasMany Tags -\> hasMany Examples
+
+And you wanna query all the types, with their tags, but only those that have examples, ordering by most examples.
+
+```php
+    $tag_types = TagType::with(['tags' => function ($query) {
+        $query->has('examples')
+            ->withCount('examples')
+            ->orderBy('examples_count', 'desc');
+        }])->get();
+```
+
+
+# Filter by many-to-many relationship pivot column
+
+If you have a many-to-many relationship, and you add an extra column to the pivot table, here's how you can order by it when querying the list.
+
+```php
+    class Tournament extends Model
+    {
+        public function countries()    
+        {
+            return $this->belongsToMany(Country::class)->withPivot(['position']);
+        }
+    }
+
+    class TournamentsController extends Controller
+    {
+        public function whatever_method() {
+            $tournaments = Tournament::with(['countries' => function($query) {
+                $query->orderBy('position');
+            }])->latest()->get();
+        }
+    }
+```
+
+
+# You can add conditions to your relationships
+
+```php
+    class User
+    {
+        public function posts()
+        {
+            return $this->hasMany(Post::class);
+        }
+     
+        // with a getter
+        public function getPublishedPostsAttribute()
+        {
+            return $this->posts->filter(fn ($post) => $post->published);
+        }
+     
+        // with a relationship
+        public function publishedPosts()
+        {
+            return $this->hasMany(Post::class)->where('published', true);
+        } 
+    }
+```
+
+
+# \`whereHas()\` multiple connections
+
+```php
+    // User Model
+    class User extends Model
+    {
+        protected $connection = 'conn_1';
+     
+        public function posts()
+        {
+            return $this->hasMany(Post::class);
+        }
+    }
+     
+    // Post Model
+    class Post extends Model
+    {
+        protected $connection = 'conn_2';
+     
+        public function user()
+        {
+            return $this->belongsTo(User::class, 'user_id');
+        }
+    }
+     
+    // wherehas()
+    $posts = Post::whereHas('user', function ($query) use ($request) {
+          $query->from('db_name_conn_1.users')->where(...); 
+      })->get();
+```
+
+
+
+
+
+
+
