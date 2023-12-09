@@ -14,3 +14,29 @@
         });
     }
 ```
+
+
+
+### Grouping Data foor Reporting
+
+```php
+ public static function getReportByMonth()
+    {
+        return Invoice::withSum('products', \DB::raw('invoice_product.price * invoice_product.quantity'))
+            ->orderBy('invoice_date', 'desc')
+            ->get()
+            ->groupBy(function($invoice) {
+                return $invoice->invoice_date->format('Y-m');
+            });
+    }
+
+    public static function getReportByProduct()
+    {
+        return \DB::table('invoice_product')
+            ->select('products.name', \DB::raw('sum(invoice_product.price * invoice_product.quantity) as total_revenue'))
+            ->join('products', 'invoice_product.product_id', '=', 'products.id')
+            ->groupBy('products.name')
+            ->orderBy('total_revenue', 'desc')
+            ->get();
+    }
+```
