@@ -14,7 +14,15 @@
         });
     }
 ```
+or like this
 
+```php
+ private function getNextInvoiceNumber()
+    {
+        // Or you can move this logic to the Model's boot() method
+        return Invoice::max('invoice_number') + 1;
+    }
+```
 
 
 ### Grouping Data foor Reporting
