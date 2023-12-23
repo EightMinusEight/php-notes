@@ -743,6 +743,20 @@ If you are repeatedly assigning the same timezone to all of your schedule tasks,
 ```
 
 
+
+## Unset values fromo deeply-nested arrays
+
+Let's take a look at how the data_forget helper works:
+
+$data = [
+  'people' => [
+    'john' => ['address' => '123 main', 'state' => 'nc'],
+    'michael' => ['address' => '34 east 5th', 'state' => 'ny']
+  ]
+];
+ 
+data_forget($data, 'people.*.address');
+
 ## Dealing with deeply-nested arrays
 
 If you have a complex array, you can use `data_get()` helper function to retrieve a value from a nested array using "dot" notation and wildcard.
