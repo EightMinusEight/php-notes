@@ -9,6 +9,7 @@
 
 - [Eloqent and DB](Eloquent.md)
 - [Blade and Views](Blade_and_Views.md)
+- [Livewire 3](Livewire_3.md)
 
 
 
