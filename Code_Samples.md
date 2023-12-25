@@ -8,9 +8,9 @@
 ## Table of contents
 
 - [Eloqent and DB](Eloquent.md)
-  
-- [Models Relations](models-relations.md) (36 tips)
-- [Migrations](migrations.md) (15 tips)
+- [Blade and Views](Blade_and_Views.md)
+
+
 
 
 ### Business logic should be in service class
